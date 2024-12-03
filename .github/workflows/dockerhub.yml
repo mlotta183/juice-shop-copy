@@ -17,7 +17,7 @@ jobs:
     - name: Login to dockerhub
       uses: docker/login-action@v3
       with:
-       username: ${{ env.DOCKERHUB_USERNAME }}
+       username: mlotta183
        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build and push to dockerhub
@@ -25,4 +25,4 @@ jobs:
       with:
        context: 
        push: true
-       tags: ${{ env.DOCKERHUB_USERNAME }}/juice-shop-hmp:latest
+       tags: mlotta183/juice-shop-hmp:latest
