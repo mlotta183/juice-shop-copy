@@ -23,7 +23,7 @@ jobs:
     - name: Write RSA key
       uses: DamianReeves/write-file-action@master
       with:
-        path: ${GITHUB_WORKSPACE}/encryptionkeys/jwt.key
+        path: ${{GITHUB_WORKSPACE}}/encryptionkeys/jwt.key
         contents: |
           ${{ secrets.RSA_PRIVATE_KEY }}
         write-mode: append
