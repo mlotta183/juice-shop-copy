@@ -20,6 +20,14 @@ jobs:
        username: mlotta183
        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+    - name: Write RSA key
+      uses: DamianReeves/write-file-action@master
+      with:
+        path: encryptionkeys/jwt.key
+        contents: |
+          ${{ secrets.RSA_PRIVATE_KEY }}
+        write-mode: append
+
     - name: Build and push to dockerhub
       uses: docker/build-push-action@v5
       with:
